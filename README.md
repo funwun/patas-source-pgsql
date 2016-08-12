@@ -15,11 +15,13 @@ var Patas = require('patas').Patas,
 
 // create postgresql source
 var source = pgsqlSource({
+    native: false, // don't use pg-native
     host: '192.168.28.155',
     user: 'postgres', //env var: PGUSER
     database: 'test', //env var: PGDATABASE
     password: 'test', //env var: PGPASSWORD
     port: 5432, //env var: PGPORT
+    min: 4, // min number of clients in the pool
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000 // how long a client is allowed to remain idle before being closed
 });
@@ -33,7 +35,9 @@ var patas = new Patas({
 Get detail from [patas](https://github.com/funwun/patas).
 
 ## Options
-Same as [node-pg-pool](https://github.com/brianc/node-pg-pool) pool config.
+* `native` Use [pg-native](https://github.com/brianc/node-pg-native) or not.
+
+For more options, please refrence to the [node-pg-pool](https://github.com/brianc/node-pg-pool) pool config.
 
 ## License
 
