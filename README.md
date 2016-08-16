@@ -1,6 +1,6 @@
 # Patas data source for PostgreSQL
 
-The PostgreSQL data source for the [patas](
+The PostgreSQL data source for the [Patas](
     https://github.com/funwun/patas) module.
 
 ## Installation
